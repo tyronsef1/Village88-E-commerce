@@ -26,14 +26,8 @@ class Products extends CI_Controller {
         $this->load->model('Product_model');
         $view_cart['products'] = $this->Product_model->show_cart();
         $view_cart['total'] = $this->Product_model->total_price();
-        if ($view_cart ===TRUE) 
-        {
-            $this->load->view('products/cart.php', $view_cart);
-        }
-        else
-        {
-            redirect('../products');
-        }
+        $this->load->view('products/cart.php', $view_cart);
+        
     }
     public function delete($product_id)
     {
