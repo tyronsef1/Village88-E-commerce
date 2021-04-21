@@ -13,7 +13,7 @@ class Products extends CI_Controller {
         $this->load->model('Product_model');
         $product = array(
             'product_id' => $product_id,
-            'product_quantity' => $this->input->post('product_quantity')
+            'product_quantity' => $this->input->post('product_quantity', TRUE)
         );
         $add_product = $this->Product_model->add_product($product);
         if($add_product === TRUE) {
